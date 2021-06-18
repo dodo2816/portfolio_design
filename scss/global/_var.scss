@@ -1,0 +1,37 @@
+$l-nav: 550px;
+$l-nav__burger: 100px 80px;
+$l-welcome : 385px 295px;
+$l-welcome__container : 205px;
+$l-gutter__top: 160px 100px 45px;
+$l-content: 700px;
+
+$c-text:#6c6c6c;
+$c-link: #333;
+$c-link--hover: #000;
+$c-link-dash: #98CACF;
+
+$media-pad: 1024px;
+$media-phone: 600px;
+
+$font: 16px;
+
+@mixin font($f){
+    font-size: #{$f / $font}rem;
+}
+@mixin line($f){
+    line-height: #{$f / $font}rem;
+}
+
+@mixin size($media) {
+    @if $media == pad {
+        @media (max-width: $media-pad) { @content;}
+    }
+    @if $media == phone {
+        @media (max-width: $media-phone) { @content;}
+    }
+}
+@mixin content($l-content,$l-marginL){
+    width: $l-content;
+    max-width: 100%;
+    margin-left: $l-marginL;
+}

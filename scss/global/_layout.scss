@@ -1,0 +1,79 @@
+html{
+    font-size: $font;
+}
+body{
+    &.js-nav--open{
+        width: 100vw;
+        overflow: hidden;
+    }
+    a{
+        text-decoration: none;
+        color: #000;
+        transition: .2s;
+    }
+}
+.nav{
+    width: $l-nav + nth($l-nav__burger,1);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: - $l-nav;
+    transition: .3s;
+    @include size(phone){
+        left: - 100vw;
+        width: calc(100vw + #{nth($l-nav__burger,2)});
+    }
+    .js-nav--open &{
+        transform: translate3d($l-nav,0,0);
+        @include size(phone){
+            transform: translate3d(100vw,0,0);
+        }
+    }
+}
+.welcome{
+    width: nth($l-welcome,1);
+    height: 100vh;
+    padding-top: nth($l-gutter__top,1);
+    box-sizing: border-box;
+    position: fixed;
+    left: nth($l-nav__burger,1);
+    top: 0;
+    // background: url(../images/bac.png) no-repeat center 20% / contain;
+    background: url(../images/bac.png) no-repeat center 20% / auto ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s;
+    .js-nav--open &{
+        transform: translate3d($l-nav,0,0);
+    }
+    &__logo{
+        width: $l-welcome__container;
+        height: 250px;
+        // width:200px;
+        margin-bottom: 100px;
+        background: url(../images/wl.png) no-repeat center / auto 30%;
+    }
+    &__intro{
+        width: $l-welcome__container;
+        @include font(13px);
+        @include line(20px);
+        color: $c-text;
+    }
+    &__contact{
+        width: $l-welcome__container;
+        @include font(13px);
+        @include line(20px);
+        color: $c-text;
+        margin-top: 20px;
+    }
+}
+.content{
+    padding: nth($l-gutter__top,1) 30px 20px nth($l-welcome,1) + nth($l-nav__burger,1) + 10px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    transition: .3s;
+    .js-nav--open &{
+        transform: translate3d($l-nav,0,0);
+    }
+}

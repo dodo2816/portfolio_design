@@ -1,0 +1,84 @@
+.article{
+    @include content($l-content, 100px);
+    &__head{
+        margin-bottom: 100px;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__info{
+        float: left;
+        width: 100px;
+        padding-right: 100px;
+        &__group{
+            margin-bottom: 20px;
+        }
+        &__label{
+            display: block;
+            font-weight: bold;
+        }
+        &__value{
+            display: block;
+            margin-top: 8px;
+            color: #777;
+        }
+    }
+    &__content{
+        margin-left: 200px;
+        p{
+            line-height: 1.5;
+            margin: 10px 0 20px; 
+            @include font(16px);
+         }
+    }
+    &__title{
+        @include font(32px);
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    // &__about{
+    //     @include font(20px);
+    //     background: -webkit-gradient(linear, left top, right top, from(#83B1B5), to(#ffffff));
+    //     color: #fff;
+    // }
+    &__about{
+        @include font(20px);
+        font-weight: Bold;
+        color: #333;
+    }
+
+    &__me{
+        @include font(16px);
+        font-weight: bold;
+        color: $c-link-dash;
+        transition: $c-link-dash 3s linear, border-radius 1s ease-in 3s;
+    }
+    &__me:hover {
+        // color: #fff;
+        opacity: 50%;
+        border-radius: 50%;
+      }
+
+}
+
+
+.demo-letter {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    // 轉場設定
+    transition: transform 0.4s ease-in;
+  }
+.demo-letter1 {
+    transform: translate(-50%, -50%);
+  }
+.demo-letter2 {
+    transform: translate(-50%, 200%);
+  }
+.demo-letter1:hover {
+    transform: translate(-50%, -200%);
+  }
+.demo-letter2:hover {
+    transform: translate(-50%, -50%);
+  }

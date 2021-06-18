@@ -1,0 +1,19 @@
+mixin nav(text,url)
+    a.nav-item(href=url class={ active : url == pageurl})
+        span #{text}
+
++nav('Home','index.html')
++nav('About','about.html')
++nav('Works','works.html')
++nav('Blog','blog.html')
++nav('Contact','contact.html')
+
+.my-social
+    a.social-item(href="#")
+        i.fab.fa-facebook-f
+    a.social-item(href="#")
+        i.fab.fa-instagram
+    a.social-item(href="#")
+        i.fab.fa-behance
+.copyright
+    |© 2020 W.Lin

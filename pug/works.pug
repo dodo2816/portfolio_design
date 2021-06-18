@@ -1,0 +1,25 @@
+extend basic
+block var
+    - pagetitle = "Works"
+    - pageurl = "works.html"
+block content
+    .works
+        .filter-button-group
+            button.filter-btn.is-actived(data-filter="*") All
+            button.filter-btn(data-filter=".design") Graphic Design
+            button.filter-btn(data-filter=".Illust") Illustration
+            button.filter-btn(data-filter=".3d") 3D Modelling
+        .grid
+            mixin work(img,style)
+                a.grid-item(class=style href="images/"+img data-fancybox="gallery")
+                    img(src="images/"+img)
+            +work('圖片1.png','design')
+            +work('圖片0.png','Illust')
+            +work('圖片3.png','design')
+            +work('圖片8.png','3d')
+            +work('圖片4.png','design')
+            +work('圖片2.png','design')
+            +work('圖片6.png','Illust')
+            +work('圖片7.png','Illust')
+            +work('圖片9.png','3d')
+            +work('圖片5.png','Illust')

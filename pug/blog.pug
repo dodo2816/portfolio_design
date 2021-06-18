@@ -1,0 +1,36 @@
+extend basic
+block var
+    - pagetitle = "Blog"
+    - pageurl = "blog.html"
+block content
+    .blog
+        mixin blogitem(img,date,author,category,response,title,url)
+            .blog__item
+                .blog__item__head
+                    .blog__item__img
+                        img(src=img)
+                    .blog__item__info
+                        .blog__item__info__group
+                            span.blog__item__info__label Date
+                            span.blog__item__info__value #{date}
+                        .blog__item__info__group
+                            span.blog__item__info__label Author
+                            span.blog__item__info__value #{author}
+                        .blog__item__info__group
+                            span.blog__item__info__label In
+                            span.blog__item__info__value #{category}
+                        .blog__item__info__group
+                            span.blog__item__info__label Response
+                            span.blog__item__info__value #{response} comments
+                .blog__item__body
+                    a.blog__item__title(href=url) #{title}
+                    .blog__item__summary 
+                        block
+                    a.blog__item__more(href=url) Read More
+        +blogitem('images/blog_img_033.jpg','Apr 27, 2017','Winnie','Brands','6','「血液型差別」','blog4272017.html')
+            |星座は同じ年齢の女の子の間で常に流行っている話題ですが、私は星座より血液型について議論することを好みます。...
+        +blogitem('images/blog_img_011.jpg','Apr 23, 2017','winnie','Brands','6','「AI普及のロードマップ」','blog4232017.html')
+            |AIの普及は今後避けられないトレンドです。AI時代には、自分の仕事を容易に交換されないことは、未来社会で一番大切な競争力と思います。...
+        +blogitem('images/blog_img_022.jpg','Apr 20, 2017','winnie','Brands','6','「豊かになる意味」','blog4202017.html')
+            |台湾人はお金が大好きだと多くの人が言います。それについて、私が間違っているとは思いません。大学を選ぶとき、親は子供たちに、「給料がよく、仕事が安定している学部に行くよう（行きなさい）」と教えられました。「良い夫と結婚して、将来大金を稼ぐ」ということも、よく耳にすることでしたします。...
+        

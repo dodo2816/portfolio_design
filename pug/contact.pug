@@ -1,0 +1,20 @@
+extend basic
+block var
+    - pagetitle = "Contact"
+    - pageurl = "contact.html"
+block content
+    .contact
+        form.contact__form
+            .contact__field
+                input.contact__field__input(type="text")
+                label.contact__field__label Name
+            .contact__field
+                input.contact__field__input(type="email")
+                label.contact__field__label Email
+            .contact__field
+                input.contact__field__input(type="text")
+                label.contact__field__label Subject
+            .contact__field
+                textarea.contact__field__textarea
+                label.contact__field__label Message
+            button.contact__btn SUBMIT

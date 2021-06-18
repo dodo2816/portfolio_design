@@ -1,0 +1,85 @@
+.blog{
+    @include content($l-content, 100px);
+    &__item{
+        margin-bottom: 90px;
+        &__head{
+            position: relative;
+        }
+        &__img{
+            position: relative;
+            &:before{
+                content:'';
+                display: block;
+                padding-top: 440px / 1024px * 100%;
+            }
+            img{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__info{
+            width: 285px;
+            background: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            padding: 15px 0 10px 35px;
+            display: flex;
+            flex-wrap: wrap;
+            &__group{
+                flex: 1 1 50%;
+                margin-bottom: 20px;
+            }
+            &__label{
+                display: block;
+                font-weight: bold;
+            }
+            &__value{
+                display: block;
+                margin-top: 8px;
+                color: #777;
+            }
+        }
+        &__title{
+            padding: 20px 0;
+            line-height: 38px;
+            @include font(32px);
+            display: block;
+            text-decoration: none;
+            color: #111;
+            font-weight: 700;
+            padding-right: 50px;
+        }
+        &__summary{
+            @include font(16px);
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        &__more{
+            color: #111;
+            font-weight: bold;
+            text-decoration: none;
+            position: relative;
+            &:after{
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 100%;
+                bottom: 0;
+                height: 3px;
+                background: $c-link-dash;
+                transition: .3s;
+            }
+            &:hover{
+                &:after{
+                    right: 0;
+                }
+            }
+        }
+    }//item
+}

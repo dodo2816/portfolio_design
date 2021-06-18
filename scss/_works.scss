@@ -1,0 +1,47 @@
+.works{
+    @include content(800px, 80px);
+}
+
+.grid-item{
+    width: 200px;
+    float: left;
+    margin-bottom: 20px;
+    transition: .3s;
+    line-height: 0;
+    .grid:hover &{
+        opacity: 0.6;
+    }
+    &:hover{
+        opacity: 1!important;
+        box-shadow: 0 15px 30px -10px rgba(#000,0.4);
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.filter-btn{
+    background: none;
+    border: none;
+    @include font(18px);
+    padding: 10px 0;
+    margin: 20px 10px;
+    outline: none;
+    position: relative;
+    &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 5px;
+        width: 0;
+        height: 6px;
+        background: $c-link-dash;
+        transition: .3s;
+    }
+    &.is-actived{
+        &:after{
+            width: 100%;
+        }
+    }
+}

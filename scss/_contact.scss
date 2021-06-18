@@ -1,0 +1,56 @@
+.contact{
+    @include content($l-content, 100px);
+    &__form{
+        padding: 40px;
+    }
+    &__field{
+        position: relative;
+        &__input,&__textarea{
+            width: 100%;
+            padding: 0 ;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid #333;
+            margin-bottom: 40px;
+            outline: none;
+            @include font(16px);
+            transition: .3s;
+            &.has-value{
+                border-bottom: 3px solid #444;
+                & + label{
+                    top: -10px;
+                    @include font(14px);
+                    color: #888;
+                }
+            }
+        }
+        &__input{
+            height: 43px;
+        }
+        &__textarea{
+            height: 173px;
+            padding-top: 10px;
+        }
+        &__label{
+            position: absolute;
+            top: 13px;
+            left: 0;
+            transition: .3s;
+        }
+    }
+    &__btn{
+        padding: 15px 40px;
+        background: none;
+        border: 3px solid #333;
+        font-weight: bold;
+        outline: none;
+        @include font(16px);
+        transition: .3s;
+        cursor: pointer;
+        &:hover{
+            background: #000;
+            border-color: #000;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+extend basic
+block var
+    - pagetitle = "home"
+    - pageurl = "index.html"
+block content
+    mixin imgcell(imgurl,url,num,title,cate)
+        .swiper-slide.img__cell
+            img(src=imgurl, alt="")
+            p.post-num #{num}
+            h3.entry-title
+                a(href=url) #{title}
+            p.cat-links #{cate}
+    
+    .img__list
+        .img__list__control
+            .swiper-button-prev.img__list__nav.img__list__nav--prev
+            .swiper-button-next.img__list__nav.img__list__nav--next    
+        .swiper-container.img__list__slide
+            .swiper-wrapper
+                +imgcell('images/圖片1.png','single.html','04','Another Day at Work','Office')
+                +imgcell('images/圖片8.png','single.html','03','Another Day at Work','Office')
+                +imgcell('images/bac.jpeg','single.html','02','Another Day at Work','Keelung')
+                +imgcell('images/圖片0.png','single.html','01','Another Day at Work','Office')
+        
